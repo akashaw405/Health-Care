@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Health Care</string>
+    <!-- Add the strings we created earlier -->
+    <string name="micronutrients_format">Micronutrients: %s</string>
+    <string name="macronutrients_format">Macronutrients: %s</string>
+    <string name="food_sources_format">Food Sources: %s</string>
+</resources>
