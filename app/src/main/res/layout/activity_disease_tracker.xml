@@ -1,9 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background"
-    android:padding="16dp">
+    android:padding="16dp"
+    tools:context=".activities.DiseaseTrackerActivity">
 
     <!-- Top Bar -->
     <RelativeLayout
@@ -18,7 +21,7 @@
             android:id="@+id/topTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Disease Tracker"
+            android:text="@string/disease_tracker"
             android:textColor="@android:color/white"
             android:textSize="22sp"
             android:textStyle="bold" />
@@ -29,16 +32,17 @@
             android:layout_height="40dp"
             android:layout_alignParentEnd="true"
             android:background="@drawable/ic_close"
+            android:contentDescription="@string/back_button"
             app:tint="@android:color/white" />
     </RelativeLayout>
 
     <!-- Main Content -->
-    <ScrollView
-        android:layout_below="@id/top_bar"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp"
-        android:fillViewport="true">
+        android:layout_below="@id/top_bar"
+        android:fillViewport="true"
+        android:padding="16dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -49,142 +53,136 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Select a Disease:"
+                android:layout_marginBottom="12dp"
+                android:text="@string/select_disease"
                 android:textColor="@android:color/white"
                 android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="12dp" />
+                android:textStyle="bold" />
 
             <Spinner
                 android:id="@+id/spinnerDisease"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:background="@drawable/spinner_background"
-                android:padding="12dp"
-                android:elevation="4dp" />
+                android:elevation="4dp"
+                android:padding="12dp" />
 
             <!-- Result Cards -->
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 app:cardCornerRadius="16dp"
-                app:cardElevation="12dp"
-                android:background="@drawable/glass_card"
-                android:padding="18dp">
+                app:cardElevation="8dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Symptoms"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/symptoms"
                         android:textSize="22sp"
-                        android:textStyle="bold"
-                        android:layout_marginBottom="10dp" />
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/txtSymptoms"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="-"
+                        android:text="@string/placeholder_text"
                         android:textSize="18sp" />
                 </LinearLayout>
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 app:cardCornerRadius="16dp"
-                app:cardElevation="12dp"
-                android:background="@drawable/glass_card"
-                android:padding="18dp">
+                app:cardElevation="8dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Nutrients Needed"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/nutrients_needed"
                         android:textSize="22sp"
-                        android:textStyle="bold"
-                        android:layout_marginBottom="10dp" />
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/txtNutrients"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="-"
+                        android:text="@string/placeholder_text"
                         android:textSize="18sp" />
                 </LinearLayout>
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 app:cardCornerRadius="16dp"
-                app:cardElevation="12dp"
-                android:background="@drawable/glass_card"
-                android:padding="18dp">
+                app:cardElevation="8dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Recommended Foods"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/recommended_foods"
                         android:textSize="22sp"
-                        android:textStyle="bold"
-                        android:layout_marginBottom="10dp" />
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/txtFoodSources"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="-"
-
+                        android:text="@string/placeholder_text"
                         android:textSize="18sp" />
                 </LinearLayout>
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
             <!-- Buttons -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
                 android:gravity="center"
-                android:layout_marginTop="20dp">
+                android:orientation="horizontal">
 
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnGenerateReport"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Generate Report"
-                    android:textColor="@android:color/white"
-                    android:background="@drawable/gradient_button"
+                    android:layout_marginEnd="12dp"
                     android:padding="12dp"
-                    android:layout_marginEnd="12dp" />
+                    android:text="@string/generate_report"
+                    app:cornerRadius="8dp" />
 
-                <Button
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnExplore"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Explore"
-                    android:textColor="@android:color/white"
-                    android:background="@drawable/gradient_button"
-                    android:padding="12dp" />
+                    android:padding="12dp"
+                    android:text="@string/explore"
+                    app:cornerRadius="8dp" />
             </LinearLayout>
         </LinearLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 </RelativeLayout>
